@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example</title>
+  <style>
+    iframe {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h2>What does this site do?</h2>
+  <p>If you click the button at the bottom of the page, there will be an iframe shown.</p>
+  <p>There were two service workers registered when you've opened this file. One of them is related to this "main" frame, while the other is under the path of the iframe.</p>
+
+  <h2>What does it want to investigate?</h2>
+  <p>How can the main frame know if either its own or its child frame's service worker was updated.</p>
+
+  <h2>How to test?</h2>
+  <ol>
+    <li>Load the page, and check that both service workers were properly registered (you might need to tweak either the certs used or your browser</li>
+    <li>Change something in the iframe's package (`packages/child/src/index.js`)</li>
+    <li>Reload the page, and check that there is a new version for the main frame's service worker</li>
+    <li>Click the button to load the iframe</li>
+    <li>Check that there is a new version for the iframe's service worker</li>
+  </ol>
+
+  <h3>What was expected?</h3>
+  <ul>
+    <li>When the page is reloaded, there is no new version for the main frame's service_worker, instead</li>
+    <li>there is a new version for the iframe's service worker without loading the iframe</li>
+  </ul>
+
+  <div id="wrapper">
+    <strong>Click the button now</strong> <button id="loadFrame">Load iframe</button>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>

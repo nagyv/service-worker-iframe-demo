@@ -1,0 +1,19 @@
+{
+  "name": "@nagyv/service-worker-iframe-demo-child",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.html",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"No tests\"",
+    "start": "parcel watch --public-url /child src/index.html"
+  },
+  "author": "Viktor Nagy",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-workbox-precache": "github:nagyv/parcel-plugin-workbox-precache"
+  }
+}

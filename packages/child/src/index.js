@@ -1,0 +1,1 @@
+console.log('This is another message from the iframe')
