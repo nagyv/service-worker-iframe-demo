@@ -2,6 +2,8 @@
 
 This is an example repo to show https://stackoverflow.com/questions/61280142/how-can-a-parent-frame-call-skipwaiting-of-an-iframe-on-the-same-domain
 
+## Description
+
 I have two service workers attached to my website
 
 ```
@@ -28,3 +30,16 @@ As a result, as long as I don't open the iframe, I'm not able to run `skipWaitin
 
 - Is it possible to set up two service workers with different scopes from a single javascript context?
 - How can I watch for updates on both service workers without loading assets from their scope?
+
+## How to check it
+
+### Setup
+
+```
+npm i
+lerna bootstrap
+lerna link
+npm start
+```
+
+This should start a local server at [https://localhost:1234](https://localhost:1234). Open it and follow the instructions on the screen.
